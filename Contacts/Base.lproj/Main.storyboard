@@ -18,26 +18,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="myE-38-H6D">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="2mj-WZ-ee9"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="J3l-Wp-AGI"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6r-tx-Rsj">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8kA-NF-oTM"/>
+                                    <barButtonItem title="Create contact" id="5UP-CR-huI">
+                                        <connections>
+                                            <action selector="showNewCon:" destination="BYZ-38-t0r" id="iPl-VY-rcd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="myE-38-H6D" secondAttribute="bottom" id="5I8-KT-TxQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="myE-38-H6D" secondAttribute="trailing" id="5lb-Rr-HQH"/>
+                            <constraint firstItem="t6r-tx-Rsj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8UC-2m-MjV"/>
                             <constraint firstItem="myE-38-H6D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CmT-XR-Joj"/>
+                            <constraint firstItem="t6r-tx-Rsj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gga-ee-G38"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="t6r-tx-Rsj" secondAttribute="bottom" id="H7J-Li-rGx"/>
+                            <constraint firstItem="t6r-tx-Rsj" firstAttribute="top" secondItem="myE-38-H6D" secondAttribute="bottom" id="lYS-Ro-gL3"/>
                             <constraint firstItem="myE-38-H6D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ywl-A3-sHi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="myE-38-H6D" id="kkA-kq-hWd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="70"/>
+            <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
         </scene>
     </scenes>
     <resources>
