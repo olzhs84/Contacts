@@ -36,24 +36,24 @@ class ViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
         
     }
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+        storage = ContactStorage()
         loadContacts()
     }
 
-    private var contacts: [ContactProtocol] = [] {
+    var contacts: [ContactProtocol] = [] {
         didSet {
             contacts.sort { $0.title < $1.title }
+            storage.save(contacts: contacts)
         }
     }
     
+    var storage: ContactStorageProtocol!
+    
     private func loadContacts() {
-        contacts.append(Contact(title: "David Copperfield", phone: "+799912312323"))
-        contacts.append(Contact(title: "Bob Marley", phone: "+799911122233"))
-        contacts.append(Contact(title: "Duke Motris", phone: "+791122255544"))
-        
+        contacts = storage.load()
     }
     
 }
